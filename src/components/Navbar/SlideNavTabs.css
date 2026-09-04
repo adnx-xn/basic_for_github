@@ -1,0 +1,62 @@
+.slide-nav-tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+/* The single animated sliding highlight pill */
+.slide-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  background: rgba(54, 185, 231, 0.10);
+  border: 1px solid rgba(54, 185, 231, 0.25);
+  box-shadow: 0 0 12px rgba(54, 185, 231, 0.12);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 0;
+  transition: left 0.28s cubic-bezier(0.2, 0, 0, 1),
+              width 0.28s cubic-bezier(0.2, 0, 0, 1),
+              opacity 0.2s ease;
+}
+
+/* Individual tab buttons */
+.slide-tab-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.slide-tab-btn:hover {
+  color: var(--color-text);
+}
+
+.slide-tab-btn.selected {
+  color: var(--color-accent);
+}
+
+.slide-tab-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.slide-tab-btn:hover svg,
+.slide-tab-btn.selected svg {
+  transform: translateY(-0.5px);
+}

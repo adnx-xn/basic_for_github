@@ -1,0 +1,36 @@
+.app-layout-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+}
+
+/* Mobile backdrop behind off-canvas sidebar */
+.mobile-sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-sidebar-backdrop.active {
+    display: block;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 26, 45, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 18;
+  }
+}

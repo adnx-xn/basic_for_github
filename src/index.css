@@ -1,23 +1,82 @@
 :root {
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  color: #25313b;
-  background: #f4f7f8;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  --color-bg: #071A2D;
+  --color-main: #081C30;
+  --color-navbar: #102E4A;
+  --color-sidebar: #173B5A;
+  --color-border: #234563;
+  --color-border-subtle: #1a3853;
+  --color-text: #F5FAFF;
+  --color-muted: #AFC4D6;
+  --color-accent: #36B9E7;
+  --color-accent-hover: #52c8f2;
+  --color-accent-secondary: #5ED6C0;
+  --color-accent-glow: rgba(54, 185, 231, 0.25);
+  --color-card-bg: rgba(16, 46, 74, 0.65);
+  --color-card-hover: rgba(23, 59, 90, 0.8);
+  --color-card-active: #1d466b;
+  --color-danger: #f87171;
+  --color-success: #34d399;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Monaco, monospace;
+
+  --navbar-height: 64px;
+  --sidebar-width: 330px;
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s ease;
 }
 
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  min-width: 320px;
+  padding: 0;
 }
 
+html,
+body,
 #root {
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-* { box-sizing: border-box; }
+/* Custom scientific scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
-p {
-  margin: 0;
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
