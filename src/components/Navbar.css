@@ -1,0 +1,232 @@
+/* ═══════════════════════════════════════════════════════════
+   Navbar — INCOIS 3D Ocean Visualization
+   Self-contained styles. No dependency on App.css or Sidebar.
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.navbar {
+  height: 56px;
+  background: #122b49;
+  border-bottom: 1px solid rgba(41, 70, 99, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: #dbe8f5;
+  user-select: none;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+  z-index: 100;
+}
+
+/* ── Left: Brand & Title ── */
+
+.navbar-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navbar-incois-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #e2eefb;
+  background: rgba(13, 34, 60, 0.7);
+  border: 1px solid rgba(47, 84, 124, 0.5);
+  padding: 4px 10px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(41, 70, 99, 0.6);
+  flex-shrink: 0;
+}
+
+.navbar-title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.navbar-system-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e8f0fa;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.navbar-system-subtitle {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6e8fae;
+  line-height: 1.2;
+}
+
+/* ── Center: Navigation ── */
+
+.navbar-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-nav-item {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #7b9bbd;
+  padding: 6px 14px;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.navbar-nav-item:hover {
+  color: #d0e2f3;
+  background-color: rgba(219, 232, 245, 0.06);
+}
+
+.navbar-nav-item.is-active {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: rgba(77, 162, 255, 0.1);
+}
+
+.navbar-nav-item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background-color: #4da2ff;
+  border-radius: 2px;
+}
+
+/* ── Right: Dataset & Settings ── */
+
+.navbar-meta-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navbar-dataset-tag {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(13, 34, 60, 0.5);
+  border: 1px solid rgba(35, 69, 107, 0.5);
+  padding: 5px 11px;
+  border-radius: 5px;
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.navbar-dataset-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+  box-shadow: 0 0 4px rgba(56, 189, 248, 0.45);
+  flex-shrink: 0;
+}
+
+.navbar-dataset-label {
+  color: #6e8fae;
+  font-weight: 400;
+}
+
+.navbar-dataset-name {
+  color: #c4daf0;
+  font-weight: 600;
+}
+
+.navbar-tools {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-tool-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #7b9bbd;
+  padding: 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.navbar-tool-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.navbar-tool-btn:hover {
+  color: #d0e2f3;
+  background: rgba(219, 232, 245, 0.06);
+  border-color: rgba(41, 70, 99, 0.4);
+}
+
+.navbar-tool-btn:active {
+  background: rgba(219, 232, 245, 0.1);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .navbar-system-subtitle {
+    display: none;
+  }
+
+  .navbar-nav-menu {
+    gap: 2px;
+  }
+
+  .navbar-nav-item {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar-nav-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .navbar-divider,
+  .navbar-title-group {
+    display: none;
+  }
+
+  .navbar-dataset-tag {
+    display: none;
+  }
+}
